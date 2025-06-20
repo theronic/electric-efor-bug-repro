@@ -33,7 +33,7 @@
               ; this just makes 1000 plain maps
               users       (for [x (range 1000)]
                             {:db/id   x
-                             :eacl/id (str "id-" x)}) ; (lookup-users-with-accounts db acl) ;(e/Offload #(lookup-users-with-accounts db acl)) ; (qry-user-ids db) ; or use lookup-users-with-accounts
+                             :eacl/id (str "id-" x)})
               sorted      (->> users (sort-by :db/id))
               paginated   (->> sorted (drop offset) (take limit)) ; also crashes if you call (vec) on list.
               diffed-page (e/diff-by :db/id paginated)] ; also crashes if you pass identity
