@@ -15,11 +15,7 @@
 
       (dom/button
         (dom/On "click" (fn [_] (swap! !page-number inc)) nil)
-        (dom/text "Next Page"))
-
-      (dom/button
-        (dom/On "click" (fn [_] (reset! !page-number 1)) nil)
-        (dom/text "Last Page >>")))))
+        (dom/text "Next Page")))))
 
 (e/defn UserList []
   (e/client
